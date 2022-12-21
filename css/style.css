@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000000f2;
+    color:black;
+    
+}
+
+/* /* --------- ASIDE-NAVBAR -------- */
+.aside-nav{
+    z-index: 1111;
+    left: -300px;
+    bottom: 0;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    transition: all 0.6s ease;
+
+}
+.aside-nav.active{
+    left: 0;
+}
+.asideNav-inner{
+    position: relative;
+    height: 100%;
+    width: 300px;
+    background-color: black;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.6s ease;
+
+}
+.bottom-div i{
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: color .2s;
+}
+.bottom-div{
+ padding: 0 1.5rem;
+}
+.bottom-div i:hover{
+    color: darkgoldenrod;
+}
+.navList{
+    padding: 0 1rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.asideNav-outer{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f6f6;
+    padding:  1rem 0rem;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+    li{
+        list-style: none !important; 
+        padding: 15px;
+        
+    }
+    @keyframes navbarItems {
+        0%{}
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        margin: 10px;
+    }
+    a:hover{
+        color: darkgoldenrod;
+    }
+.name{
+    color: black;
+    position: absolute;
+    text-transform: capitalize;
+    top: 100%;
+    text-align: center;
+    font-size: 3rem !important;
+    padding: 0.8rem;
+    height: 100%;
+    left: 21px;
+    right: 2px;
+    font-weight: lighter !important;
+    width: 97%;
+    background-color: rgba(241, 241, 241, 0.863);
+    transition: top 0.8s;
+}
+.meal_card:hover .name{ 
+  top: 0;
+}
+
+.meal_card{
+    overflow: hidden;
+    border-radius: 5px;
+    min-height: 20%;
+    margin-bottom: 1.5rem;
+    color: black;
+    }
+
+.city-icon{
+    color:#e65a50ab;
+}
+
+.loading{
+    height: 100vh;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545;
+    padding-right: 2.25rem;
+    background-repeat: no-repeat;
+    background-position: center right calc(2.25rem / 4);
+    background-size: calc(2.25rem / 2) calc(2.25rem / 2);
+}

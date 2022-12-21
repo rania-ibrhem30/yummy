@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAM API</title>
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css ">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+  <body>
+      <aside class="aside-nav">
+        <div>
+            <div class="asideNav-inner">
+                <ul class="navList flex-column-center">
+                    <li class="nav-item" id=""><a href="search.html" movieCategory="popular" class="navLink">Search</a></li>
+                    <li class="nav-item" id="categories"><a href="categories.html"  movieCategory="top_rated" class="navLink">Categories</a></li>
+                    <li class="nav-item"><a href="area.html" movieCategory="trending" class="navLink">Area</a></li>
+                    <li class="nav-item"><a href="ingredients.html" movieCategory="upcoming" class="navLink">Ingredients</a></li>
+                    <li class="nav-item"><a href="contact.html" class="navLink">Contact US</a></li>
+                </ul>
+                <div class="bottom-div text-white">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fas fa-globe"></i>
+                    <p class="text-white mt-3">Copyright Â© 2019 All Rights Reserved.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+    
+    <div class="asideNav-outer">
+        <div class="logo">
+            <img src="/img/logo.png" alt=""class="w-75 ps-2">
+        </div>
+        <div class="open-btn">
+        <i class="fa fa-align-justify text-black fs-3"></i>
+        </div>
+        <div class="icons text-black ">
+            <div class="strip-lang">
+                <span>
+                    <i class="fas fa-globe "></i>
+                </span>
+            </div>
+            <div class="strip-share">
+                <span>
+                    <i class="fas fa-share-alt"></i>
+                </span>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+   </aside>
+   <main>
+   <div class="container py-3 g-1 main-container">
+    <div class="contact"></div>
+    <div id="row"></div>
+   
+   </div>
+
+
+   
+   </main> 
+
+
+ 
+
+ 
+  <script src="/js/jquery-3.6.1.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+
+    $("html, body").animate({
+        scrollTop: 0
+    }, 200)
+
+
+        row.innerHTML = `
+        <section id="contact" class="container myM w-75 mx-auto mt-5 ">
+		<div class="p-2">
+			<h2 class="text-light mb-5">ContacUs...</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input class="form-control text-light bg-transparent border-0 border-bottom shadow " onkeyup="validation()" id="name"
+							placeholder="Enter Your Name">
+						<div class="alert mt-1 alert-danger d-none" id="namealert" role="alert">
+							Special Characters and Numbers not allowed
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input onkeyup="validation()" class="form-control text-light bg-transparent border-0 border-bottom" id="email" placeholder="Enter Email">
+						<div class="alert mt-1 alert-danger d-none" id="emailalert" role="alert">
+							Enter valid email. *Ex: xxx@yyy.zzz
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input onkeyup="validation()" class="form-control text-light bg-transparent border-0 border-bottom" id="phone" placeholder="Enter phone">
+						<div class="alert mt-1 alert-danger  d-none" id="phonealert" role="alert">
+							Enter valid Phone Number
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input onkeyup="validation()" class="form-control text-light bg-transparent border-0 border-bottom" id="age" placeholder="Enter Age">
+						<div class="alert mt-1 alert-danger  d-none" id="agealert" role="alert">
+							Enter valid Age
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input onkeyup="validation()" class="form-control text-light bg-transparent border-0 border-bottom" type="password" id="password"
+							placeholder="Enter Password">
+						<div class="alert mt-1 alert-danger  d-none" id="passwordalert" role="alert">
+							Enter valid password *Minimum eight characters, at least one letter and one number:*
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group mb-4">
+						<input onkeyup="validation()" class="form-control text-light bg-transparent border-0 border-bottom" type="password" id="rePassword"
+							placeholder="Enter RePassword">
+						<div class="alert mt-1 alert-danger  d-none" id="repasswordalert" role="alert">
+							Enter valid Repassword
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<button type="submit" id="submitBtn" class="btn btn-success w-100">Submit</button>
+		</div>
+
+	</section>`
+        userName = document.getElementById("name"),
+            userEmail = document.getElementById("email"),
+            userPhone = document.getElementById("phone"),
+            userAge = document.getElementById("age"),
+            userPassword = document.getElementById("password"),
+            userRePassword = document.getElementById("rePassword"),
+            userNameAlert = document.getElementById("namealert"),
+            userEmailAlert = document.getElementById("emailalert"),
+            userPhoneAlert = document.getElementById("phonealert"),
+            userAgeAlert = document.getElementById("agealert"),
+            userpasswordAlert = document.getElementById("passwordalert"),
+            userRepasswordAlert = document.getElementById("repasswordalert");
+
+        userName.addEventListener("focus", () => {
+            nameToached = true
+        })
+        userEmail.addEventListener("focus", () => {
+            emailToached = true
+        })
+        userPhone.addEventListener("focus", () => {
+            phoneToached = true
+        })
+        userAge.addEventListener("focus", () => {
+            ageToached = true
+        })
+        userPassword.addEventListener("focus", () => {
+            passwordToached = true
+        })
+        userRePassword.addEventListener("focus", () => {
+            repasswordToached = true
+        })
+
+
+
+
+$(document).scroll((e) => {
+
+    if ($(document).scrollTop()) {
+        $(".mmm").css("backgroundColor", "#0D0D0D")
+    }
+})
+
+
+let nameToached = false,
+    emailToached = false,
+    phoneToached = false,
+    ageToached = false,
+    passwordToached = false,
+    repasswordToached = false;
+
+function validation() {
+
+    if (nameToached) {
+        if (userNameValid()) {
+            userName.classList.remove("is-invalid")
+            userName.classList.add("is-valid")
+            userNameAlert.classList.replace("d-block", "d-none")
+            userNameAlert.classList.replace("d-block", "d-none")
+
+        } else {
+            userName.classList.replace("is-valid", "is-invalid")
+            userNameAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if (emailToached) {
+        if (userEmailValid()) {
+            userEmail.classList.remove("is-invalid")
+            userEmail.classList.add("is-valid")
+            userEmailAlert.classList.replace("d-block", "d-none")
+            userEmailAlert.classList.replace("d-block", "d-none")
+        } else {
+            userEmail.classList.replace("is-valid", "is-invalid")
+            userEmailAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if (phoneToached) {
+        if (userPhoneValid()) {
+            userPhone.classList.remove("is-invalid")
+            userPhone.classList.add("is-valid")
+            userPhoneAlert.classList.replace("d-block", "d-none")
+            userPhoneAlert.classList.replace("d-block", "d-none")
+        } else {
+            userPhone.classList.replace("is-valid", "is-invalid")
+            userPhoneAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if (ageToached) {
+        if (userAgeValid()) {
+            userAge.classList.remove("is-invalid")
+            userAge.classList.add("is-valid")
+            userAgeAlert.classList.replace("d-block", "d-none")
+            userAgeAlert.classList.replace("d-block", "d-none")
+        } else {
+            userAge.classList.replace("is-valid", "is-invalid")
+            userAgeAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if (passwordToached) {
+        if (userPasswordValid()) {
+            userPassword.classList.remove("is-invalid")
+            userPassword.classList.add("is-valid")
+            userpasswordAlert.classList.replace("d-block", "d-none")
+            userpasswordAlert.classList.replace("d-block", "d-none")
+        } else {
+            userPassword.classList.replace("is-valid", "is-invalid")
+            userpasswordAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if (repasswordToached) {
+        if (userRePasswordValid()) {
+            userRePassword.classList.remove("is-invalid")
+            userRePassword.classList.add("is-valid")
+            userRepasswordAlert.classList.replace("d-block", "d-none")
+            userRepasswordAlert.classList.replace("d-block", "d-none")
+        } else {
+            userRePassword.classList.replace("is-valid", "is-invalid")
+            userRepasswordAlert.classList.replace("d-none", "d-block")
+        }
+    }
+
+    if(userNameValid() && userEmailValid() && userPhoneValid() && userAgeValid() && userPasswordValid() && userRePasswordValid()){
+        document.getElementById("submitBtn").removeAttribute("disabled")
+    }else{
+        document.getElementById("submitBtn").setAttribute("disabled","true")
+    }
+
+}
+
+function userNameValid() {
+    return /^[a-zA-Z ]+$/.test(userName.value)
+}
+
+function userEmailValid() {
+    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(userEmail.value)
+}
+
+function userPhoneValid() {
+    return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(userPhone.value)
+}
+
+function userAgeValid() {
+    return /^[1-9][0-9]?$|^100$/.test(userAge.value)
+}
+
+function userPasswordValid() {
+    return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(userPassword.value)
+}
+
+function userRePasswordValid() {
+    return userPassword.value == userRePassword.value
+}
+
+  </script>
+    <script>
+        AOS.init();
+    </script>
+  <script src="/js/main.js"></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+ </body>
+</html>
